@@ -26,10 +26,10 @@ public class ServiceforesporselController {
 
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
-	private ServiceforesporselService service;
+	private final ServiceforesporselService service;
 	// private LocalDate lastupdatedate;
 
-	public ServiceforesporselController(OrdreService service) { //,
+	public ServiceforesporselController(ServiceforesporselService service) { //,
 		this.service = service;
 	}
 

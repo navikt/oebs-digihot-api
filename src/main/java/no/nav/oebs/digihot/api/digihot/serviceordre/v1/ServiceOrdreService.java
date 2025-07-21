@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(noRollbackFor = { Exception.class })
 public class ServiceOrdreService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_restapi_oebs_ve_v1.xxrtv_betalingsdato";
+	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceordre";
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 

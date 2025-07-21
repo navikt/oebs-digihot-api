@@ -1,2 +1,2 @@
-# oebs-api mot Eye-Share og Vieri
+# oebs-digihot-api mot DIGIHOT
 REST API'er tilbudt av Oebs.

@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(noRollbackFor = { Exception.class })
 public class BrukerNrService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_restapi_oebs_ve_v1.xxrtv_bestillingsinfo";
+	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_brukernr";
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 

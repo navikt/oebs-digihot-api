@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfig {
 
-	public static final String DIGIHOT = "Digihot API";
+	public static final String DIGIHOT = "Oebs API";
 
 	@Value("${oebs.environment}")
 	String env;
@@ -29,7 +29,7 @@ public class SwaggerConfig {
 	public OpenAPI apiInfo() {
 		return new OpenAPI()
 				.info(new Info()
-						.title(env + " - (NAIS)")
+						.title(env + " - DIGIHOT")
 						.description("""
 								<p>REST API'er som er tilbudt av Oebs.</p>
 								<p>Sikkerhet:</p>
