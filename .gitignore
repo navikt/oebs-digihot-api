@@ -1,0 +1,26 @@
+### Eclipse ###
+/target
+/.settings
+.classpath
+.project
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+/out/
+/build/
+*.stackdump
+.idea/*
+
+### Hjelpefiler som ikke skal sjekkes inn ###
+run-local.*
+local-env.txt
+mtest.properties
+cacerts
+postdata.txt
+*.tmp
+
+### Other ###
+/.sonar
+.factorypath

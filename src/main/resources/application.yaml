@@ -1,0 +1,38 @@
+
+server:
+  port: 8080
+
+spring:
+  profiles:
+     active: nais
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    #properties:
+    #  hibernate:
+    #    dialect: org.hibernate.dialect.Oracle12cDialect
+    show-sql: false
+    open-in-view: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus, metrics
+
+springdoc:
+  packagesToScan: no.nav.oebs.digihot.api
+  override-with-generic-response: false
+  remove-broken-reference-definitions: false
+  swagger-ui:
+    disable-swagger-default-url: true
+    tags-sorter: alpha
+
+# logging:
+#  level:
+#    com.zaxxer.hikari: DEBUG
+#    root: warn
+#    org.springframework.web: debug
+#    org.hibernate: error

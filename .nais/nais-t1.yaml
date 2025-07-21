@@ -1,0 +1,63 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    texas.nais.io/enabled: "true"
+  name: oebs-digihot-api-t1
+  namespace: team-oebs
+  labels:
+    team: team-oebs
+spec:
+  image: {{ image }}
+  port: 8080
+  replicas:
+    min: 2
+    max: 2
+    cpuThresholdPercentage: 50
+  liveness:
+    path: /internal/isalive
+    initialDelay: 60
+    timeout: 11
+  readiness:
+    path: /internal/isready
+    initialDelay: 60
+    timeout: 10
+  resources:
+    requests:
+      cpu: 40m
+      memory: 512Mi
+    limits:
+      memory: 1024Mi
+  azure:
+    application:
+      enabled: true
+      allowAllUsers: true
+      tenant: trygdeetaten.no
+
+  accessPolicy:
+    inbound:
+      rules:
+        - application: oebs-fullmakt-dev
+        - application: saas-proxy
+          namespace: teamcrm
+          cluster: dev-gcp
+    outbound:
+      external:
+        - host: saas-proxy.intern.dev.nav.no
+      rules:
+        - application: saas-proxy
+          namespace: teamcrm
+          cluster: dev-gcp
+
+  prometheus:
+    enabled: true
+    path: /actuator/prometheus
+  vault:
+    enabled: true
+    paths:
+      - kvPath: "kv/preprod/fss/oebs-digihot-api-t1/team-oebs"
+        mountPath: "/var/run/secrets/nais.io/vault"
+
+  ingresses:
+    - "https://oebs-digihot-api-t1.intern.dev.nav.no"
+    - "https://oebs-digihot-api-t1.dev-fss-pub.nais.io"

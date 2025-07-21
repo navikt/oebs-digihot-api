@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration>
+
+<configuration>
+    <appender name="stdout_json" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                <exclude>java\.util\.concurrent\..*</exclude>
+                <exclude>org\.apache\.tomcat\..*</exclude>
+                <exclude>org\.apache\.coyote\..*</exclude>
+                <exclude>org\.apache\.catalina\..*</exclude>
+                <exclude>org\.springframework\.web\..*</exclude>
+            </throwableConverter>
+        </encoder>
+    </appender>
+
+    <springProfile name="nais">
+        <root>
+            <level value="INFO" />
+            <appender-ref ref="stdout_json" />
+        </root>
+        <!--<logger name="com.zaxxer.hikari.pool.HikariPool" level="TRACE"/>
+        <logger name="no.nav.oebs.api" level="DEBUG" />
+        <logger name="logging.level.org.hibernate" level="DEBUG" /> -->
+    </springProfile>
+
+    <springProfile name="local">
+        <include resource="org/springframework/boot/logging/logback/base.xml" />
+        <!-- logger name="com.zaxxer.hikari.pool.HikariPool" level="TRACE"/ -->
+        <logger name="no.nav.oebs.digihot.api" level="DEBUG" />
+        <!--logger name="logging.level.org.hibernate" level="DEBUG" / -->
+    </springProfile>
+</configuration>
