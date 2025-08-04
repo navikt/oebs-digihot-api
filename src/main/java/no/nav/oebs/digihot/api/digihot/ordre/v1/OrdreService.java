@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(noRollbackFor = { Exception.class })
 public class OrdreService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_ordreservice";
+	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_ordre";
 
 	private PlsqlProcedureRepository plsqlProcedureRepository;
 
