@@ -4,7 +4,7 @@
 -- Kildefil          : V1__xxrtv_digihot_logg.sql
 -- Beskrivelse       : Loggtabell for API-kall.
 -------------------------------------------------------------------------------
-CREATE TABLE xxrtv_digihot_logg( kall_logg_id        NUMBER        NOT NULL
+CREATE TABLE xxrtv.xxrtv_digihot_logg( kall_logg_id        NUMBER        NOT NULL
                       , korrelasjon_id      VARCHAR2(50)  NOT NULL
                       , tidspunkt           TIMESTAMP(9)  NOT NULL
                       , type                VARCHAR2(10)  NOT NULL
@@ -24,6 +24,7 @@ INTERVAL(NUMTOYMINTERVAL(1, 'MONTH'))
 CREATE INDEX xxrtv_kalo_digihot_U3 ON xxrtv_digihot_logg
 (status) LOCAL;
 
+create synonym xxrtv_digihot_logg for xxrtv.xxrtv_digihot_logg;
 -- Legg til sekvens og trigger
 CREATE  SEQUENCE xxrtv_digihot_api_seq
 START WITH 1

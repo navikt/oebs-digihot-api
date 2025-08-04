@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(noRollbackFor = { Exception.class })
 public class ServiceforesporselService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceforsporsel";
+	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceforesporsel";
 
 	private PlsqlProcedureRepository plsqlProcedureRepository;
 
