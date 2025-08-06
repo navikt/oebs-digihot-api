@@ -34,7 +34,7 @@ public class ServiceforesporselController {
 		this.service = service;
 	}
 
-	@Unprotected
+	@Protected
 	@GetMapping(path = "/serviceforesporsel")
 	@DigihotSwagger
 	public String finnServiceforesporselTransaksjoner(
