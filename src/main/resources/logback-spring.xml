@@ -22,7 +22,7 @@
             <appender-ref ref="stdout_json" />
         </root>
         <!--<logger name="com.zaxxer.hikari.pool.HikariPool" level="TRACE"/ -->
-        <logger name="no.nav.oebs.digihot" level="DEBUG" />
+        <!-- logger name="no.nav.oebs.digihot" level="DEBUG" / -->
         <!--logger name="logging.level.org.hibernate" level="DEBUG" /> -->
     </springProfile>
 
