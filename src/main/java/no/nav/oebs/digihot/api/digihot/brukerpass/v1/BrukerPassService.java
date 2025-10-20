@@ -26,10 +26,7 @@ public class BrukerPassService extends ObjektMaps {
 	public String finnBrukerPassTransaksjoner(String fodsels_nummer) {
 
 		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
-        if (result.getMessageNumber() < 0) {
-            throwPlsqlException(result);
-        }
-		return result.getData();
+		    return result.getData();
 
 	}
 
