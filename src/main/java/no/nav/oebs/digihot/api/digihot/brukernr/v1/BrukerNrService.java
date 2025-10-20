@@ -31,9 +31,9 @@ public class BrukerNrService extends ObjektMaps {
 		//															LocalDate lastupdatedate) {
 
 		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
-		/* if (result.getMessageNumber() < 0) {
+		if (result.getMessageNumber() < 0) {
 			 throwPlsqlException(result);
-		/} */
+		}
 
 		return result.getData();
 

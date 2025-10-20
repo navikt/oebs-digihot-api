@@ -26,6 +26,9 @@ public class ServiceOrdreService extends ObjektMaps {
 	public String finnServiceOrdreTransaksjoner(String fodsels_nummer) {
 
 		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
+        if (result.getMessageNumber() < 0) {
+            throwPlsqlException(result);
+        }
 		return result.getData();
 	}
 

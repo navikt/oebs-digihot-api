@@ -26,7 +26,10 @@ public class OrdreService extends ObjektMaps {
 	public String finnOrdreTransaksjoner(String fodsels_nummer) {
 
 		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
-		return result.getData();
+        if (result.getMessageNumber() < 0) {
+            throwPlsqlException(result);
+        }
+        return result.getData();
 	}
 
 	private JsonRequest buildRequest(String fodsels_nummer) {

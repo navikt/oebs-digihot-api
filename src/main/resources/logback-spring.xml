@@ -21,9 +21,9 @@
             <level value="INFO" />
             <appender-ref ref="stdout_json" />
         </root>
-        <!--<logger name="com.zaxxer.hikari.pool.HikariPool" level="TRACE"/>
-        <logger name="no.nav.oebs.api" level="DEBUG" />
-        <logger name="logging.level.org.hibernate" level="DEBUG" /> -->
+        <!--<logger name="com.zaxxer.hikari.pool.HikariPool" level="TRACE"/ -->
+        <logger name="no.nav.oebs.digihot" level="DEBUG" />
+        <!--logger name="logging.level.org.hibernate" level="DEBUG" /> -->
     </springProfile>
 
     <springProfile name="local">
