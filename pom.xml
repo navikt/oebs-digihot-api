@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.3</version>
+        <version>3.5.9</version>
         <relativePath/>
     </parent>
 
@@ -23,9 +23,9 @@
         <surefire.coverage.argLine/>
 
         <!-- NAV artifacts -->
-        <token-validation.version>5.0.16</token-validation.version>
+        <token-validation.version>5.0.30</token-validation.version>
         <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
-        <nimbus-jose-jwt.version>10.0.1</nimbus-jose-jwt.version>
+        <nimbus-jose-jwt.version>10.0.2</nimbus-jose-jwt.version>
         <springdoc-openapi.version>1.8.0</springdoc-openapi.version>
         <sonar-maven-plugin.version>5.0.0.4389</sonar-maven-plugin.version>
     </properties>
@@ -151,6 +151,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+            <version>3.18.0</version>
         </dependency>
 
         <!-- Test dependencies -->
