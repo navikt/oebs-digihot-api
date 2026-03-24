@@ -41,14 +41,9 @@ spec:
         - application: saas-proxy
           namespace: teamcrm
           cluster: prod-gcp
-    outbound:
-      external:
-        - host: saas-proxy.intern.nav.no
-      rules:
         - application: saas-proxy
-          namespace: teamcrm
-          cluster: prod-gcp
-
+          namespace: platforce
+          cluster: dev-gcp
   prometheus:
     enabled: true
     path: /actuator/prometheus
