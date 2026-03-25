@@ -43,7 +43,7 @@ spec:
           cluster: prod-gcp
         - application: saas-proxy
           namespace: platforce
-          cluster: dev-gcp
+          cluster: prod-gcp
   prometheus:
     enabled: true
     path: /actuator/prometheus
