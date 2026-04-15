@@ -39,9 +39,6 @@ spec:
       rules:
         - application: oebs-fullmakt-prod
         - application: saas-proxy
-          namespace: teamcrm
-          cluster: prod-gcp
-        - application: saas-proxy
           namespace: platforce
           cluster: prod-gcp
   prometheus:
