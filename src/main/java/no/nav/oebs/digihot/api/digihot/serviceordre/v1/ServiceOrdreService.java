@@ -2,7 +2,6 @@ package no.nav.oebs.digihot.api.digihot.serviceordre.v1;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import no.nav.oebs.digihot.Application;
 import no.nav.oebs.digihot.api.common.model.JsonRequest;
 import no.nav.oebs.digihot.api.common.utils.ObjektMaps;
 import no.nav.oebs.digihot.db.repository.PlsqlProcedureRepository;
@@ -19,7 +18,7 @@ public class ServiceOrdreService extends ObjektMaps {
 
 	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceordre";
 
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(ServiceOrdreService.class);
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 
