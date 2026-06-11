@@ -10,6 +10,8 @@ metadata:
 spec:
   image: {{ image }}
   port: 8080
+  envFrom:
+    - secret: oebs-digihot-api
   replicas:
     min: 2
     max: 2
@@ -44,11 +46,6 @@ spec:
   prometheus:
     enabled: true
     path: /actuator/prometheus
-  vault:
-    enabled: true
-    paths:
-      - kvPath: "kv/prod/fss/oebs-digihot-api/team-oebs"
-        mountPath: "/var/run/secrets/nais.io/vault"
 
   ingresses:
     - "https://oebs-digihot-api.intern.nav.no"

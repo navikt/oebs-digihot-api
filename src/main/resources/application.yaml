@@ -3,10 +3,13 @@ server:
   port: 8080
 
 spring:
-  profiles:
-     active: nais
+  application:
+    name: ${NAIS_APP_NAME}
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    url: ${DB_URL}
   jpa:
     hibernate:
       ddl-auto: none
@@ -30,10 +33,14 @@ springdoc:
     disable-swagger-default-url: true
     tags-sorter: alpha
 
-# logging:
-#  level:
-#    com.zaxxer.hikari: DEBUG
-#    root: info # warn
-#    org.springframework.web: debug
-#    org.hibernate: error
-#    no.nav.oebs.digihot: DEBUG
+no.nav.security.jwt:
+  issuer:
+    azure:
+      accepted_audience: ${AZURE_APP_CLIENT_ID}
+      discoveryurl:  ${AZURE_APP_WELL_KNOWN_URL}
+      proxyurl: http://webproxy-nais.nav.no:8088
+
+oebs:
+  environment: ${OEBS_ENVIRONMENT}
+  version: 1.0.0
+  date: 15.06.2026
