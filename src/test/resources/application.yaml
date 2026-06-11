@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: oebs-digihot-api
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: test_user
+    password: test_password
+    url: jdbc:oracle:thin:@localhost:1521:testdb
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+    show-sql: true
+    open-in-view: false
+
+oebs:
+  environment: TEST
+  version: 0.7.0
+  date: 16.07.2024
