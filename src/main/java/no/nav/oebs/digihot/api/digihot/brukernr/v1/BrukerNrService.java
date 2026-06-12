@@ -26,14 +26,8 @@ public class BrukerNrService extends ObjektMaps {
 
 	public String finnBrukerNrTransaksjoner(String fodsels_nummer) {
 
-
-		//public List<Leverandortransaksjon> finnKonteringstransaksjoner(String companycode, String segmentname,
-		//															LocalDate lastupdatedate) {
-
 		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
-				return result.getData();
-
-		// return getApiResponse(result.getData());
+		return result.getData();
 	}
 
 	/**
@@ -54,15 +48,4 @@ public class BrukerNrService extends ObjektMaps {
 		return plsqlProcedureRepository.executeInOutProcedure(PLSQL_PROCEDURE, toJson(request));
 	}
 
-	/**
-	 * Konverterer en respons-JSON til et responsobjekt som API'et skal returnere.
-	 */
-	/*private List<Leverandortransaksjon> getApiResponse(String json) {
-		if (json == null) {
-			throw new TechnicalPlsqlException("Uventet null-verdi istedenfor JSON-objekt fra " + PLSQL_PROCEDURE);
-		}
-
-		return toObject(json, new TypeReference<List<Leverandortransaksjon>>() {
-		});
-	}*/
 }
