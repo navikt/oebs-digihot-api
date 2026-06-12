@@ -23,10 +23,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 @Tag(name = SwaggerConfig.DIGIHOT, description = "Digihot")
 public class BrukerNrController {
 
-	private static final Logger logger = LoggerFactory.getLogger(Application.class);
-
 	private BrukerNrService service;
-	// private LocalDate lastupdatedate;
 
 	public BrukerNrController(BrukerNrService service) { //,
 		this.service = service;

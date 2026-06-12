@@ -2,12 +2,9 @@ package no.nav.oebs.digihot.api.digihot.brukerpass.v1;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
-import no.nav.oebs.digihot.Application;
 import no.nav.oebs.digihot.api.common.swagger.DigihotSwagger;
 import no.nav.oebs.digihot.config.SwaggerConfig;
 import no.nav.security.token.support.core.api.Protected;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,10 +20,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 @Tag(name = SwaggerConfig.DIGIHOT, description = "Digihot")
 public class BrukerPassController {
 
-	private static final Logger logger = LoggerFactory.getLogger(Application.class);
-
 	private BrukerPassService service;
-	// private LocalDate lastupdatedate;
 
 	public BrukerPassController(BrukerPassService service) { //,
 		this.service = service;
