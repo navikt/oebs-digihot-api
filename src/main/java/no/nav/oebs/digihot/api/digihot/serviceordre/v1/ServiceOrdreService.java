@@ -2,10 +2,13 @@ package no.nav.oebs.digihot.api.digihot.serviceordre.v1;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import no.nav.oebs.digihot.Application;
 import no.nav.oebs.digihot.api.common.model.JsonRequest;
 import no.nav.oebs.digihot.api.common.utils.ObjektMaps;
 import no.nav.oebs.digihot.db.repository.PlsqlProcedureRepository;
 import no.nav.oebs.digihot.db.repository.PlsqlProcedureResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class ServiceOrdreService extends ObjektMaps {
 
 	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceordre";
+
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 
@@ -26,7 +31,10 @@ public class ServiceOrdreService extends ObjektMaps {
 	public String finnServiceOrdreTransaksjoner(String fodsels_nummer) {
 
 		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
-		return result.getData();
+
+        logger.info(result.getData());
+
+        return result.getData();
 	}
 
 	private JsonRequest buildRequest(String fodsels_nummer) {
