@@ -55,10 +55,26 @@ jobs:
         with:
           team: team-oebs
 
+  deploy-t1:
+    name: Deploy to NAIS (T1)
+    needs: [ build_and_push]
+    if: github.event_name != 'pull_request' && github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: nais/deploy/actions/deploy@v2
+        env:
+          CLUSTER: dev-fss
+          RESOURCE: .nais/nais-t1.yaml
+          VAR: image=${{ needs.build_and_push.outputs.image }}
 
   deploy-q1:
     name: Deploy to NAIS (Q1)
-    needs: [ build_and_push]
+    needs: [ build_and_push, deploy-t1]
     if: github.event_name != 'pull_request' && github.ref_name == 'main'
     runs-on: ubuntu-latest
     permissions:
@@ -75,7 +91,7 @@ jobs:
 
   deploy-prod:
     name: Deploy to NAIS produksjon
-    needs: [ build_and_push, deploy-q1 ]
+    needs: [ build_and_push, deploy-t1, deploy-q1 ]
     if: github.event_name == 'workflow_dispatch' && inputs.deploy_prod == true
     runs-on: ubuntu-latest
     permissions:
