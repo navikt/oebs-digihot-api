@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 
-import java.time.LocalDate;
-
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
