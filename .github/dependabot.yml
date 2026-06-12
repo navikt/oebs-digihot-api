@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: docker
+    directory: "/"
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 10
+    reviewers:
+      - navikt/oebs-java-dev
+  - package-ecosystem: maven
+    directory: "/"
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 50
+    reviewers:
+      - navikt/oebs-java-dev
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 10
+    reviewers:
+      - navikt/oebs-java-dev
