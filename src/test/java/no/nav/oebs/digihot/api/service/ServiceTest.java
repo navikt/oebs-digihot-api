@@ -1,6 +1,5 @@
 package no.nav.oebs.digihot.api.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import no.nav.oebs.digihot.api.digihot.brukernr.v1.BrukerNrService;
 import no.nav.oebs.digihot.api.digihot.brukerpass.v1.BrukerPassService;
 import no.nav.oebs.digihot.api.digihot.ordre.v1.OrdreService;

@@ -2,6 +2,7 @@ package no.nav.oebs.digihot.api.common.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 
@@ -14,7 +15,8 @@ import lombok.*;
 @JsonPropertyOrder({ "fodsels_nummer" })
 public class JsonRequest {
 
-    private String fodsels_nummer;
+    @JsonProperty("fodsels_nummer")
+    private String fodselsNummer;
 
 }
 

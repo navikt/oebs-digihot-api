@@ -1,7 +1,6 @@
 package no.nav.oebs.digihot.api.digihot.serviceordre.v1;
 
 import lombok.extern.slf4j.Slf4j;
-import no.nav.oebs.digihot.Application;
 import no.nav.oebs.digihot.api.common.model.JsonRequest;
 import no.nav.oebs.digihot.api.common.utils.ObjektMaps;
 import no.nav.oebs.digihot.db.repository.PlsqlProcedureRepository;
@@ -19,7 +18,7 @@ public class ServiceOrdreService extends ObjektMaps {
 
 	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceordre";
 
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(ServiceOrdreService.class);
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 
@@ -28,18 +27,18 @@ public class ServiceOrdreService extends ObjektMaps {
 		this.plsqlProcedureRepository = plsqlProcedureRepository;
 	}
 
-	public String finnServiceOrdreTransaksjoner(String fodsels_nummer) {
+	public String finnServiceOrdreTransaksjoner(String fodselsNummer) {
 
-		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
+		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodselsNummer));
 
         logger.info(result.getData());
 
         return result.getData();
 	}
 
-	private JsonRequest buildRequest(String fodsels_nummer) {
+	private JsonRequest buildRequest(String fodselsNummer) {
 		return JsonRequest.builder() //
-				.fodsels_nummer(fodsels_nummer) //
+				.fodselsNummer(fodselsNummer) //
 				.build();
 	}
 

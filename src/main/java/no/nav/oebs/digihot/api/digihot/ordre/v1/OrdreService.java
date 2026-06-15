@@ -16,22 +16,22 @@ public class OrdreService extends ObjektMaps {
 
 	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_ordre";
 
-	private PlsqlProcedureRepository plsqlProcedureRepository;
+	private final PlsqlProcedureRepository plsqlProcedureRepository;
 
 	public OrdreService(PlsqlProcedureRepository plsqlProcedureRepository, JsonMapper objectMapper) {
 		super(objectMapper);
 		this.plsqlProcedureRepository = plsqlProcedureRepository;
 	}
 
-	public String finnOrdreTransaksjoner(String fodsels_nummer) {
+	public String finnOrdreTransaksjoner(String fodselsNummer) {
 
-		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
+		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodselsNummer));
 		    return result.getData();
 	}
 
-	private JsonRequest buildRequest(String fodsels_nummer) {
+	private JsonRequest buildRequest(String fodselsNummer) {
 		return JsonRequest.builder() //
-				.fodsels_nummer(fodsels_nummer) //
+				.fodselsNummer(fodselsNummer) //
 				.build();
 	}
 

@@ -32,24 +32,18 @@ import static no.nav.oebs.digihot.config.common.mdc.MdcOperations.generateCorrel
 public class PlsqlProcedureRepository {
 
 	// Generelle parameternavn; behøver ikke å matche hva som brukes i PL/SQL.
-	// private static final String ID_PARAM = "id";
 	private static final String DATA_IN_PARAM = "data_in";
 	private static final String DATA_OUT_PARAM = "data_out";
 	private static final String MESSAGE_NO_PARAM = "msg_no";
 	private static final String MESSAGE_PARAM = "msg";
 
-	private KallLoggRepository kallLoggRepository;
-
-	private JdbcTemplate jdbcTemplate;
-
-	private ConcurrentMap<String, SimpleJdbcCall> jdbcCallCache = new ConcurrentHashMap<>();
+	private final JdbcTemplate jdbcTemplate;
+	private final ConcurrentMap<String, SimpleJdbcCall> jdbcCallCache = new ConcurrentHashMap<>();
 
 	@Autowired
-	public PlsqlProcedureRepository(DataSource dataSource, KallLoggRepository kallLoggRepository) {
+	public PlsqlProcedureRepository(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 		jdbcTemplate.setResultsMapCaseInsensitive(true);
-
-		this.kallLoggRepository = kallLoggRepository;
 	}
 
 	public PlsqlProcedureResult executeInOutProcedure(String procedureName, String dataIn) {

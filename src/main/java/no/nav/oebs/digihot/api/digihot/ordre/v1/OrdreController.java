@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 @Tag(name = SwaggerConfig.DIGIHOT, description = "Digihot")
 public class OrdreController {
 
-	private OrdreService service;
+	private final OrdreService service;
 
 	public OrdreController(OrdreService service) { //,
 		this.service = service;
@@ -30,9 +30,9 @@ public class OrdreController {
 	@GetMapping(path = "/ordre")
 	@DigihotSwagger
 	public String finnBrukerNrTransaksjoner(
-			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodsels_nummer)
+			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodselsNummer)
 	{
 
-		return service.finnOrdreTransaksjoner(fodsels_nummer);
+		return service.finnOrdreTransaksjoner(fodselsNummer);
 	}
 }

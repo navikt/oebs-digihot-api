@@ -44,7 +44,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleConstraintViolationException : triggers when @Validated fails
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<?> handleConstraintViolationException(Exception ex) {
+    public ResponseEntity<Object> handleConstraintViolationException(Exception ex) {
 
         List<String> details = new ArrayList<>();
         details.add(ex.getMessage());

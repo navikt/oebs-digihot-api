@@ -24,18 +24,18 @@ public class BrukerNrService extends ObjektMaps {
 		this.plsqlProcedureRepository = plsqlProcedureRepository;
 	}
 
-	public String finnBrukerNrTransaksjoner(String fodsels_nummer) {
+	public String finnBrukerNrTransaksjoner(String fodselsNummer) {
 
-		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
+		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodselsNummer));
 		return result.getData();
 	}
 
 	/**
 	 * Bygger et requestobjekt som skal konverteres til JSON.
 	 */
-	private JsonRequest buildRequest(String fodsels_nummer) {
+	private JsonRequest buildRequest(String fodselsNummer) {
 		return JsonRequest.builder() //
-				.fodsels_nummer(fodsels_nummer) //
+				.fodselsNummer(fodselsNummer) //
 				.build();
 	}
 

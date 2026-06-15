@@ -23,16 +23,16 @@ public class BrukerPassService extends ObjektMaps {
 		this.plsqlProcedureRepository = plsqlProcedureRepository;
 	}
 
-	public String finnBrukerPassTransaksjoner(String fodsels_nummer) {
+	public String finnBrukerPassTransaksjoner(String fodselsNummer) {
 
-		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
+		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodselsNummer));
 		    return result.getData();
 
 	}
 
-	private JsonRequest buildRequest(String fodsels_nummer) {
+	private JsonRequest buildRequest(String fodselsNummer) {
 		return JsonRequest.builder() //
-				.fodsels_nummer(fodsels_nummer) //
+				.fodselsNummer(fodselsNummer) //
 				.build();
 	}
 
