@@ -35,11 +35,9 @@
 
         <!-- NAV artifacts -->
         <token-validation.version>5.0.30</token-validation.version>
-        <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
-        <nimbus-jose-jwt.version>10.0.2</nimbus-jose-jwt.version>
-        <springdoc-openapi.version>1.8.0</springdoc-openapi.version>
+        <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
         <sonar-maven-plugin.version>5.0.0.4389</sonar-maven-plugin.version>
-        <jacoco.version>0.8.14</jacoco.version>
+        <jacoco.version>0.8.15</jacoco.version>
     </properties>
 
     <dependencies>
@@ -64,11 +62,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
         <dependency>
@@ -120,12 +113,6 @@
             <version>2.7.0</version>
         </dependency>
 
-        <!--<dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${springdoc-openapi.version}</version>
-        </dependency>-->
-
         <dependency>
             <groupId>no.nav.security</groupId>
             <artifactId>token-validation-spring</artifactId>
@@ -142,28 +129,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
+            <version>1.18.46</version>
             <scope>provided</scope>
-        </dependency>
-
-        <!-- Jetty HTTP Client -->
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-reactive-httpclient</artifactId>
-        </dependency>
-
-        <!-- Nimbus JWT support -->
-        <dependency>
-            <groupId>com.nimbusds</groupId>
-            <artifactId>nimbus-jose-jwt</artifactId>
-            <version>${nimbus-jose-jwt.version}</version>
-        </dependency>
-
-        <!-- Commons -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.18.0</version>
         </dependency>
 
         <!-- Test dependencies -->
@@ -218,8 +185,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>15</source>
-                    <target>15</target>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
         </plugins>
