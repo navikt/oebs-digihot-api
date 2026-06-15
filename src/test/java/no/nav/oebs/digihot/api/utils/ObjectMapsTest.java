@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 import java.util.List;
 import java.util.Map;
@@ -16,7 +17,7 @@ class ObjectMapsTest {
 
     // Concrete subclass to expose protected methods for testing
     private static class TestObjektMaps extends ObjektMaps {
-        TestObjektMaps(ObjectMapper ObjectMapper) {
+        TestObjektMaps(JsonMapper ObjectMapper) {
             super(ObjectMapper);
         }
 
@@ -31,7 +32,7 @@ class ObjectMapsTest {
 
     @BeforeEach
     void setUp() {
-        objektMaps = new TestObjektMaps(new ObjectMapper());
+        objektMaps = new TestObjektMaps(new JsonMapper());
     }
 
     @Nested

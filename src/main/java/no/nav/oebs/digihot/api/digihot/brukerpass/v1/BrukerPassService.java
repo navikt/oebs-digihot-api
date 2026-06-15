@@ -1,6 +1,5 @@
 package no.nav.oebs.digihot.api.digihot.brukerpass.v1;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import no.nav.oebs.digihot.api.common.model.JsonRequest;
 import no.nav.oebs.digihot.api.common.utils.ObjektMaps;
@@ -8,6 +7,7 @@ import no.nav.oebs.digihot.db.repository.PlsqlProcedureRepository;
 import no.nav.oebs.digihot.db.repository.PlsqlProcedureResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tools.jackson.databind.json.JsonMapper;
 
 @Slf4j
 @Service
@@ -18,7 +18,7 @@ public class BrukerPassService extends ObjektMaps {
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 
-	public BrukerPassService(PlsqlProcedureRepository plsqlProcedureRepository, ObjectMapper objectMapper) {
+	public BrukerPassService(PlsqlProcedureRepository plsqlProcedureRepository, JsonMapper objectMapper) {
 		super(objectMapper);
 		this.plsqlProcedureRepository = plsqlProcedureRepository;
 	}
