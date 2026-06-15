@@ -35,7 +35,7 @@
 
         <!-- NAV artifacts -->
         <token-validation.version>5.0.30</token-validation.version>
-        <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
+        <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
         <sonar-maven-plugin.version>5.0.0.4389</sonar-maven-plugin.version>
         <jacoco.version>0.8.15</jacoco.version>
     </properties>
