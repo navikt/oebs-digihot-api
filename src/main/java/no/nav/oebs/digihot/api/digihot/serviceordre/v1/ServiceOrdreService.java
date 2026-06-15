@@ -1,6 +1,5 @@
 package no.nav.oebs.digihot.api.digihot.serviceordre.v1;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import no.nav.oebs.digihot.Application;
 import no.nav.oebs.digihot.api.common.model.JsonRequest;
@@ -11,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tools.jackson.databind.json.JsonMapper;
 
 @Slf4j
 @Service
@@ -23,7 +23,7 @@ public class ServiceOrdreService extends ObjektMaps {
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 
-	public ServiceOrdreService(PlsqlProcedureRepository plsqlProcedureRepository, ObjectMapper objectMapper) {
+	public ServiceOrdreService(PlsqlProcedureRepository plsqlProcedureRepository, JsonMapper objectMapper) {
 		super(objectMapper);
 		this.plsqlProcedureRepository = plsqlProcedureRepository;
 	}

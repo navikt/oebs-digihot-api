@@ -6,6 +6,7 @@ import no.nav.oebs.digihot.Application;
 import no.nav.oebs.digihot.api.common.swagger.DigihotSwagger;
 import no.nav.oebs.digihot.config.SwaggerConfig;
 import no.nav.security.token.support.core.api.Protected;
+import no.nav.security.token.support.core.api.Unprotected;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
@@ -29,7 +30,8 @@ public class BrukerNrController {
 		this.service = service;
 	}
 
-	@Protected
+	//@Protected
+	@Unprotected
 	@GetMapping(path = "/brukernr")
 	@DigihotSwagger
 	public String finnBrukerNrTransaksjoner(
