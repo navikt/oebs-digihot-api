@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import tools.jackson.databind.json.JsonMapper;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -26,7 +27,7 @@ public class ServiceTest {
     @Mock
     private PlsqlProcedureRepository plsqlProcedureRepository;
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final JsonMapper objectMapper = new JsonMapper();
 
     private PlsqlProcedureResult resultWithData(String data) {
         return new PlsqlProcedureResult(data, PlsqlProcedureResult.OK, "OK");
