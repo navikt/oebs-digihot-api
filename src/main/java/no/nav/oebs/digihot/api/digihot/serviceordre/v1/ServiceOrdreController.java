@@ -30,10 +30,10 @@ public class ServiceOrdreController {
 	@GetMapping(path = "/serviceordre")
 	@DigihotSwagger
 	public String finnServiceOrdreTransaksjoner(
-			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodsels_nummer)
+			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodselsNummer)
 	{
 
-		return service.finnServiceOrdreTransaksjoner(fodsels_nummer);
+		return service.finnServiceOrdreTransaksjoner(fodselsNummer);
 	}
 }
 

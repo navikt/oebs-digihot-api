@@ -6,7 +6,7 @@ public abstract class PlsqlException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public PlsqlException(String message) {
+	protected PlsqlException(String message) {
 		super(LoggingUtils.maskIfFnr(message));
 	}
 }

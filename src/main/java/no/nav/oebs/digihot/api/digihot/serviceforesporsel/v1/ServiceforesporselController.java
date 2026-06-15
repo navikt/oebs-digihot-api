@@ -30,9 +30,9 @@ public class ServiceforesporselController {
 	@GetMapping(path = "/serviceforesporsel")
 	@DigihotSwagger
 	public String finnServiceforesporselTransaksjoner(
-			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodsels_nummer)
+			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodselsNummer)
 	{
 
-		return service.finnServiceforesporselTransaksjoner(fodsels_nummer);
+		return service.finnServiceforesporselTransaksjoner(fodselsNummer);
 	}
 }

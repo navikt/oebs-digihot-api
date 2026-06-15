@@ -16,22 +16,22 @@ public class ServiceforesporselService extends ObjektMaps {
 
 	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceforesporsel";
 
-	private PlsqlProcedureRepository plsqlProcedureRepository;
+	private final PlsqlProcedureRepository plsqlProcedureRepository;
 
 	public ServiceforesporselService(PlsqlProcedureRepository plsqlProcedureRepository, JsonMapper objectMapper) {
 		super(objectMapper);
 		this.plsqlProcedureRepository = plsqlProcedureRepository;
 	}
 
-	public String finnServiceforesporselTransaksjoner(String fodsels_nummer) {
+	public String finnServiceforesporselTransaksjoner(String fodselsNummer) {
 
-		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodsels_nummer));
+		PlsqlProcedureResult result = executePlsqlProcedure(buildRequest(fodselsNummer));
 		    return result.getData();
 	}
 
-	private JsonRequest buildRequest(String fodsels_nummer) {
+	private JsonRequest buildRequest(String fodselsNummer) {
 		return JsonRequest.builder() //
-				.fodsels_nummer(fodsels_nummer) //
+				.fodselsNummer(fodselsNummer) //
 				.build();
 	}
 

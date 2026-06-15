@@ -5,10 +5,8 @@ import no.nav.oebs.digihot.api.common.utils.ObjektMaps;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,8 +15,8 @@ class ObjectMapsTest {
 
     // Concrete subclass to expose protected methods for testing
     private static class TestObjektMaps extends ObjektMaps {
-        TestObjektMaps(JsonMapper ObjectMapper) {
-            super(ObjectMapper);
+        TestObjektMaps(JsonMapper jsonMapper) {
+            super(jsonMapper);
         }
 
         @Override

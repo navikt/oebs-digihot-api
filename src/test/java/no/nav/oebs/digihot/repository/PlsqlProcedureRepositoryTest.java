@@ -1,6 +1,5 @@
 package no.nav.oebs.digihot.repository;
 
-import no.nav.oebs.digihot.db.repository.KallLoggRepository;
 import no.nav.oebs.digihot.db.repository.PlsqlProcedureRepository;
 import no.nav.oebs.digihot.db.repository.PlsqlProcedureResult;
 import no.nav.oebs.digihot.exception.UgyldigInputException;
@@ -20,7 +19,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -33,9 +32,6 @@ class PlsqlProcedureRepositoryTest {
     private DataSource dataSource;
 
     @Mock
-    private KallLoggRepository kallLoggRepository;
-
-    @Mock
     private SimpleJdbcCall simpleJdbcCall;
 
     private PlsqlProcedureRepository repository;
@@ -44,7 +40,7 @@ class PlsqlProcedureRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        repository = new PlsqlProcedureRepository(dataSource, kallLoggRepository);
+        repository = new PlsqlProcedureRepository(dataSource);
 
         // Inject mocked SimpleJdbcCall into the cache to avoid real DB calls
         ConcurrentMap<String, SimpleJdbcCall> cache = new ConcurrentHashMap<>();
