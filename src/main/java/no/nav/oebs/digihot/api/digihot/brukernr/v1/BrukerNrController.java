@@ -2,13 +2,10 @@ package no.nav.oebs.digihot.api.digihot.brukernr.v1;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
-import no.nav.oebs.digihot.Application;
 import no.nav.oebs.digihot.api.common.swagger.DigihotSwagger;
 import no.nav.oebs.digihot.config.SwaggerConfig;
 import no.nav.security.token.support.core.api.Protected;
 import no.nav.security.token.support.core.api.Unprotected;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,20 +21,19 @@ import io.swagger.v3.oas.annotations.Parameter;
 @Tag(name = SwaggerConfig.DIGIHOT, description = "Digihot")
 public class BrukerNrController {
 
-	private BrukerNrService service;
+	private final BrukerNrService service;
 
 	public BrukerNrController(BrukerNrService service) { //,
 		this.service = service;
 	}
 
-	//@Protected
-	@Unprotected
+	@Protected
 	@GetMapping(path = "/brukernr")
 	@DigihotSwagger
 	public String finnBrukerNrTransaksjoner(
-			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodsels_nummer)
+			@RequestParam(name = "fodsels_nummer") @Parameter(description = "11 siffer") String fodselsNummer)
 	{
 
-		return service.finnBrukerNrTransaksjoner(fodsels_nummer);
+		return service.finnBrukerNrTransaksjoner(fodselsNummer);
 	}
 }
