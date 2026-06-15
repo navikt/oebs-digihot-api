@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import no.nav.oebs.digihot.api.common.swagger.DigihotSwagger;
 import no.nav.oebs.digihot.config.SwaggerConfig;
 import no.nav.security.token.support.core.api.Protected;
-import no.nav.security.token.support.core.api.Unprotected;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
