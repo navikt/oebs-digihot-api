@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: oebs-po-api-api
+
+  jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
+
+no.nav.security.jwt:
+  issuer:
+    azure:
+      accepted_audience: 1243
+      proxyurl:
+
+oebs:
+  environment: OEBS
