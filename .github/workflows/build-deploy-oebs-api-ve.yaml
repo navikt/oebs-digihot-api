@@ -66,7 +66,7 @@ jobs:
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
 
-      - uses: nais/deploy/actions/deploy@c55d6073d913975d2dada508bdfefc6427d39867
+      - uses: nais/deploy/actions/deploy@5fdd91aaf69bb0d6dd5e5118cdacb639f487b93b
         env:
           CLUSTER: dev-fss
           RESOURCE: .nais/nais-t1.yaml
@@ -83,7 +83,7 @@ jobs:
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
 
-      - uses: nais/deploy/actions/deploy@c55d6073d913975d2dada508bdfefc6427d39867
+      - uses: nais/deploy/actions/deploy@5fdd91aaf69bb0d6dd5e5118cdacb639f487b93b
         env:
           CLUSTER: dev-fss
           RESOURCE: .nais/nais-q1.yaml
@@ -101,7 +101,7 @@ jobs:
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
 
-      - uses: nais/deploy/actions/deploy@c55d6073d913975d2dada508bdfefc6427d39867
+      - uses: nais/deploy/actions/deploy@5fdd91aaf69bb0d6dd5e5118cdacb639f487b93b
         env:
           CLUSTER: prod-fss
           RESOURCE: .nais/nais-p.yaml
