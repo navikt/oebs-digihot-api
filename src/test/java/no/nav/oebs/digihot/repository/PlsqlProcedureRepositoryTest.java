@@ -36,7 +36,7 @@ class PlsqlProcedureRepositoryTest {
 
     private PlsqlProcedureRepository repository;
 
-    private static final String VALID_PROCEDURE = "PACKAGE.PROCEDURE";
+    private static final String VALID_PROCEDURE = "APPS.XXRTV_DIGIHOT_API_PKG.XXRTV_BRUKERNUMMER";
 
     @BeforeEach
     void setUp() {
