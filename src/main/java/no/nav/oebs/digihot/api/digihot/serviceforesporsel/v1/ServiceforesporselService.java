@@ -14,7 +14,7 @@ import tools.jackson.databind.json.JsonMapper;
 @Transactional(noRollbackFor = { Exception.class })
 public class ServiceforesporselService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceforesporsel";
+	private static final String PLSQL_PROCEDURE = "apps.xxrtv_digihot_api_pkg.xxrtv_serviceforesporsel";
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 

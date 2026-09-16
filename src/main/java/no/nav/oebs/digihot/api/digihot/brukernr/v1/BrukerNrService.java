@@ -15,7 +15,7 @@ import tools.jackson.databind.json.JsonMapper;
 @Transactional(noRollbackFor = { Exception.class })
 public class BrukerNrService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_brukernummer";
+	private static final String PLSQL_PROCEDURE = "apps.xxrtv_digihot_api_pkg.xxrtv_brukernummer";
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 

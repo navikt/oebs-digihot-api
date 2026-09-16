@@ -16,7 +16,7 @@ import tools.jackson.databind.json.JsonMapper;
 @Transactional(noRollbackFor = { Exception.class })
 public class ServiceOrdreService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_serviceordre";
+	private static final String PLSQL_PROCEDURE = "apps.xxrtv_digihot_api_pkg.xxrtv_serviceordre";
 
     private static final Logger logger = LoggerFactory.getLogger(ServiceOrdreService.class);
 
