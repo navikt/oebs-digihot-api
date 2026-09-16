@@ -14,7 +14,7 @@ import tools.jackson.databind.json.JsonMapper;
 @Transactional(noRollbackFor = { Exception.class })
 public class BrukerPassService extends ObjektMaps {
 
-	private static final String PLSQL_PROCEDURE = "xxrtv_digihot_api_pkg.xxrtv_brukerpass";
+	private static final String PLSQL_PROCEDURE = "apps.xxrtv_digihot_api_pkg.xxrtv_brukerpass";
 
 	private final PlsqlProcedureRepository plsqlProcedureRepository;
 

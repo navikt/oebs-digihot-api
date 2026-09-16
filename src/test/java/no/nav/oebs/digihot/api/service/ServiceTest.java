@@ -72,7 +72,7 @@ public class ServiceTest {
             service.finnBrukerNrTransaksjoner("12345678901");
 
             verify(plsqlProcedureRepository).executeInOutProcedure(
-                    eq("xxrtv_digihot_api_pkg.xxrtv_brukernummer"), any());
+                    eq("apps.xxrtv_digihot_api_pkg.xxrtv_brukernummer"), any());
         }
     }
 
@@ -116,7 +116,7 @@ public class ServiceTest {
             service.finnBrukerPassTransaksjoner("12345678901");
 
             verify(plsqlProcedureRepository).executeInOutProcedure(
-                    eq("xxrtv_digihot_api_pkg.xxrtv_brukerpass"), any());
+                    eq("apps.xxrtv_digihot_api_pkg.xxrtv_brukerpass"), any());
         }
     }
 
@@ -160,7 +160,7 @@ public class ServiceTest {
             service.finnOrdreTransaksjoner("12345678901");
 
             verify(plsqlProcedureRepository).executeInOutProcedure(
-                    eq("xxrtv_digihot_api_pkg.xxrtv_ordre"), any());
+                    eq("apps.xxrtv_digihot_api_pkg.xxrtv_ordre"), any());
         }
     }
 
@@ -204,7 +204,7 @@ public class ServiceTest {
             service.finnServiceforesporselTransaksjoner("12345678901");
 
             verify(plsqlProcedureRepository).executeInOutProcedure(
-                    eq("xxrtv_digihot_api_pkg.xxrtv_serviceforesporsel"), any());
+                    eq("apps.xxrtv_digihot_api_pkg.xxrtv_serviceforesporsel"), any());
         }
     }
 
@@ -248,7 +248,7 @@ public class ServiceTest {
             service.finnServiceOrdreTransaksjoner("12345678901");
 
             verify(plsqlProcedureRepository).executeInOutProcedure(
-                    eq("xxrtv_digihot_api_pkg.xxrtv_serviceordre"), any());
+                    eq("apps.xxrtv_digihot_api_pkg.xxrtv_serviceordre"), any());
         }
     }
 }
