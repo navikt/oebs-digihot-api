@@ -10,6 +10,9 @@ metadata:
 spec:
   image: {{ image }}
   port: 8080
+  env:
+    - name: SPRING_PROFILES_ACTIVE
+      value: nais
   envFrom:
     - secret: oebs-digihot-api
   replicas:
